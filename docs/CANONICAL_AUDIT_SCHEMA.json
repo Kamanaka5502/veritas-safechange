@@ -1,0 +1,62 @@
+{
+  "properties": {
+    "after_hash": {
+      "type": "string"
+    },
+    "before_hash": {
+      "type": "string"
+    },
+    "change_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "extra": {
+      "properties": {
+        "audit_hash": {
+          "type": "string"
+        },
+        "invariants": {
+          "type": "array"
+        },
+        "prev_audit_hash": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "audit_hash"
+      ],
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "signature": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "state_kind": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "decision",
+    "reason",
+    "before_hash",
+    "after_hash",
+    "state_kind",
+    "change_id",
+    "timestamp",
+    "extra"
+  ],
+  "type": "object"
+}

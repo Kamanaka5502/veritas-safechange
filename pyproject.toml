@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veritas-safechange"
+version = "2.0.1"
+description = "Veritas Aegis safe production change control with provable rollback, receipts, and replay verification."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{name = "Samantha Revita"}, {name = "Terry Snyder"}]
+keywords = ["rollback", "change-control", "deployments", "safety", "devops", "receipts", "governance"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: System :: Systems Administration"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "ruff>=0.6.0"]
+
+[project.scripts]
+safechange = "safechange.cli:main"
+recovery-gate = "recovery_gate.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.urls]
+Homepage = "mailto:canarybird0618@gmail.com"

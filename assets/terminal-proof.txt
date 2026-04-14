@@ -1,0 +1,4 @@
+status: SAFE
+reason: verification passed and rollback path preserved
+receipt: 91b2f6c8a77d3f1a...
+next step: run receipt verification or replay the path

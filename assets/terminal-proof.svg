@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<rect width="1200" height="680" fill="#0b1320"/>
+<rect x="52" y="52" width="1096" height="576" rx="20" fill="#111c2e" stroke="#38527a"/>
+<text x="90" y="132" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Veritas SafeChange</text>
+<text x="90" y="174" fill="#9fb4d1" font-family="Arial, Helvetica, sans-serif" font-size="24">A Veritas Aegis product from Samantha Revita and Terry Snyder</text>
+<text x="90" y="244" fill="#d9e6f6" font-family="Courier New, monospace" font-size="26">safechange apply state.json change.json --pretty</text>
+<rect x="90" y="282" width="1020" height="270" rx="14" fill="#0d1625" stroke="#2d466d"/>
+<text x="122" y="344" fill="#7fd98a" font-family="Courier New, monospace" font-size="30" font-weight="700">status: SAFE</text>
+<text x="122" y="392" fill="#d9e6f6" font-family="Courier New, monospace" font-size="24">reason: verification passed and rollback path preserved</text>
+<text x="122" y="440" fill="#d9e6f6" font-family="Courier New, monospace" font-size="24">receipt: 91b2f6c8a77d3f1a...</text>
+<text x="122" y="488" fill="#d9e6f6" font-family="Courier New, monospace" font-size="24">next step: run receipt verification or replay the path</text>
+<text x="90" y="598" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">SAFE · REVERTED · BLOCKED</text>
+<text x="640" y="598" fill="#9fb4d1" font-family="Arial, Helvetica, sans-serif" font-size="22">Provable rollback · Receipt-backed proof · Deterministic verification</text>
+</svg>
