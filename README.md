@@ -2,8 +2,7 @@
 
 **Veritas SafeChange** is a **Veritas Aegis** product from **Samantha Revita** and **Terry Snyder**.
 
-It puts a governed boundary around risky production change so a change only becomes real when it can be **applied, verified, and cleanly reversed if verification fails**.
-
+It puts a governed boundary around risky production change so a a change is only allowed to exist if it can be applied, verified, and cleanly reversed 
 **Human-facing outcomes**
 - **SAFE** — the change landed and held
 - **REVERTED** — the change was undone cleanly after verification failed
@@ -12,6 +11,8 @@ It puts a governed boundary around risky production change so a change only beco
 ![Veritas SafeChange proof](assets/terminal-proof.svg)
 
 ## What buyers are buying
+
+We enforce the moment a change becomes real.
 
 A hard control point for risky change:
 
