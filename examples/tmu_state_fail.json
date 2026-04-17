@@ -1,0 +1,6 @@
+{
+  "authority": "physician_signoff",
+  "context": "tmu_demo",
+  "corridor": "recommendation_to_commit",
+  "tmu_action": "commit_recommendation"
+}
