@@ -34,4 +34,4 @@ package-dir = {"" = "."}
 where = ["."]
 
 [project.urls]
-Homepage = "mailto:canarybird0618@gmail.com"
+Homepage = "https://github.com/Kamanaka5502/veritas-safechange"
