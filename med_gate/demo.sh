@@ -1,16 +1,23 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-echo "----- PASS CASE (should be SAFE) -----"
+echo ""
+echo "=== SAME CHANGE, DIFFERENT CONDITIONS ==="
+echo ""
+
+echo "→ Case 1: Required condition PRESENT → should COMMIT"
 safechange apply state_pass.json change.json --pretty --require renal_lab_present
 
 echo ""
-echo "----- FAIL CASE (should REVERT) -----"
+echo "→ Case 2: Required condition MISSING → should NOT become real"
 safechange apply state_fail.json change.json --pretty --require renal_lab_present
 
 echo ""
-echo "----- VERIFY -----"
-safechange verify-audit ../recovery_gate_audit.jsonl --pretty
+echo "→ Verify receipt trail"
+safechange verify-audit recovery_gate_audit.jsonl --pretty
 
 echo ""
-echo "----- REPLAY -----"
-safechange replay ../recovery_gate_audit.jsonl --pretty
+echo "→ Replay independently (same input → same result)"
+safechange replay recovery_gate_audit.jsonl --pretty
+
+echo ""
+echo "=== RESULT: EXECUTION IS CONTROLLED AT COMMIT ==="
