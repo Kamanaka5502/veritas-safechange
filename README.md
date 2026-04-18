@@ -1,39 +1,85 @@
-# Veritas SafeChange
+## Outcomes
 
-> Proprietary and Confidential — Veritas Aegis. No reuse, reverse engineering, derivative implementation, or production deployment without written permission.
+| Outcome | Meaning |
+|--------|--------|
+| **SAFE / COMMITTED** | Change passed all conditions and became real |
+| **REVERTED / ROLLED_BACK** | Change failed conditions and was undone |
+| **BLOCKED** | Change never became real |
 
-Veritas SafeChange is a governed execution-boundary system for safe production changes.
-
-It provides:
-- controlled commit behavior
-- invariant-gated execution
-- automatic rollback on failed invariants
-- receipt generation
-- audit verification
-- replay verification
-
-## Core idea
-A change does not become real merely because it was requested.
-It becomes real only if it passes the boundary.
-
-## CLI surface
-- `safechange apply`
-- `safechange verify-audit`
-- `safechange replay`
-
-## Example outcomes
-- SAFE / COMMITTED
-- REVERTED / ROLLED_BACK
-- BLOCKED
+---
 
 ## Proof behavior
-The system can:
-- execute an admissible change
-- revert an inadmissible change
-- verify the receipt trail
-- replay the receipt trail
 
-## Commercial position
-This software is licensed, not sold.
-Evaluation is permitted.
-Production use requires a commercial agreement with Veritas Aegis.
+The system enforces and proves execution behavior:
+
+- admissible change → executes  
+- inadmissible change → rolls back  
+- every action → emits a receipt  
+- receipts → can be verified  
+- receipts → can be replayed independently  
+
+**Same input → same result**
+
+---
+
+## Why it matters
+
+Most systems explain what happened after execution.
+
+Veritas SafeChange controls whether execution is allowed to happen at all.
+
+This is the difference between:
+
+- observation  
+- enforcement  
+
+---
+
+## Example framing
+
+A change enters the boundary.
+
+**If conditions are valid:**
+- it commits  
+- a receipt is produced  
+- the result can be verified and replayed  
+
+**If conditions are not valid:**
+- it does not become real  
+- it is rolled back or blocked  
+- the failure is explicit and provable  
+
+---
+
+## Positioning
+
+Veritas SafeChange is a licensed execution layer, not a general-use library.
+
+### Allowed
+- confidential evaluation  
+- bounded demonstrations  
+- proof-of-concept use  
+
+### Not allowed
+- production deployment without agreement  
+- derivative implementations  
+- reverse engineering  
+- redistribution  
+
+See:
+- LICENSE  
+- COMMERCIAL_TERMS.md  
+- IP_PROTECTION.md  
+
+---
+
+## Contact
+
+Veritas Aegis  
+Samantha Revita  
+SamanthaGreenwellRevita@gmail.com  
+
+Terry Snyder  
+Co-Architect, Execution Substrate  
+canarybird0618@gmail.com  
+
