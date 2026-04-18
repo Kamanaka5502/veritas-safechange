@@ -6,3 +6,23 @@ dist/
 *.egg-info/
 audit.jsonl
 *.derivations.jsonl
+
+# Local / sensitive
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+*.sqlite
+*.sqlite3
+.env
+*.log
+
+# Audit artifacts
+*.jsonl
+*.derivations.jsonl
+
+# Secrets / notes
+secrets/
+internal_notes/
+private/
