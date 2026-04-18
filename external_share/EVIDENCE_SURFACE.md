@@ -1,26 +1,34 @@
-# Evidence Surface — Veritas Aegis
+# Veritas Aegis — Evidence Surface
 
 This system produces verifiable evidence for every attempted action.
 
-## Each execution includes:
-- Decision outcome (COMMITTED / ROLLED_BACK / BLOCKED)
-- Reason for decision
-- Before-state hash
-- After-state hash
-- Audit hash (receipt)
-- Timestamp
+## Each execution attempt produces
+- decision outcome
+- reason
+- before-state hash
+- after-state hash
+- audit hash
+- timestamp
+- invariant evidence when applicable
+
+## Canonical operator outcomes
+- SAFE -> COMMITTED
+- REVERTED -> ROLLED_BACK
+- BLOCKED -> APPLY_FAILED or SNAPSHOT_FAILED
 
 ## Verification
-Audit trails can be verified:
-safechange verify-audit <audit_file>
+Audit trail verification:
+safechange verify-audit <audit_jsonl>
 
-## Replay
-Execution can be independently re-derived:
-safechange replay <audit_file>
+Replay verification:
+safechange replay <audit_jsonl>
 
 ## Meaning
-- Same input -> same decision
-- Tampering breaks verification
-- No hidden execution paths
+- Same basis -> same result
+- Failed invariants produce visible rollback
+- Tampering breaks trust in the receipt trail
+- No hidden execution path is treated as valid proof
 
-This creates a provable execution boundary.
+## Boundary statement
+The evidence surface exists to prove not only what happened,
+but whether the move was allowed to become real under governance.
