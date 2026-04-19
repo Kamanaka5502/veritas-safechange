@@ -1,68 +1,117 @@
-## Outcomes
+# Veritas SafeChange™
 
-| Outcome | Meaning |
-|--------|--------|
-| **SAFE / COMMITTED** | Change passed all conditions and became real |
-| **REVERTED / ROLLED_BACK** | Change failed conditions and was undone |
-| **BLOCKED** | Change never became real |
+### Execution control at the moment decisions become real
 
 ---
 
-## Proof behavior
+## The problem
 
-The system enforces and proves execution behavior:
+Modern systems are observable, explainable, and auditable — but still execute actions that shouldn’t happen.
 
-- admissible change → executes  
-- inadmissible change → rolls back  
-- every action → emits a receipt  
-- receipts → can be verified  
-- receipts → can be replayed independently  
+These failures don’t show up in dashboards.  
+They happen when state has changed since a decision was made, permissions are no longer valid, upstream conditions have shifted, or execution continues under stale assumptions.
 
-**Same input → same result**
+> Systems don’t fail because they can’t decide. They fail because they act when they shouldn’t.
+
+---
+
+## The solution
+
+Veritas SafeChange™ is a production-ready execution control layer that enforces whether an action is allowed to complete under live state at the moment it binds.
+
+At the commit point, every action must prove:
+- authority is valid  
+- constraints are satisfied  
+- state has not drifted  
+- risk remains acceptable  
+
+If not:
+- the action is BLOCKED  
+- or ESCALATED  
+
+No silent failure. No post-hoc correction.
+
+---
+
+## Proof surface (this repo)
+
+This repository contains a minimal, runnable proof surface that demonstrates:
+- commit-time admissibility  
+- execution blocking  
+- forward-progress gaps  
+- state validation at runtime  
+
+> This is a minimal proof surface. The full execution control layer runs in production environments with additional enforcement, policy gating, and system integration.
+
+---
+
+## How it works
+
+request → attempt → evaluate → (execute | block | escalate)
+
+Each decision produces:
+- an outcome  
+- a reason  
+- a reproducible record  
 
 ---
 
 ## Why it matters
 
-Most systems explain what happened after execution.
+Traditional governance observes and explains decisions after execution.
 
-Veritas SafeChange controls whether execution is allowed to happen at all.
+SafeChange controls execution before impact occurs.
 
-This is the difference between:
-
-- observation  
-- enforcement  
+It shifts:
+- risk from reactive → preventative  
+- audit from explanation → proof  
+- control from observation → enforcement  
 
 ---
 
-## Example framing
+## What this is / is not
 
-A change enters the boundary.
+This is:
+- an execution control probe  
+- a demonstration of commit-boundary enforcement  
+- a way to surface hidden execution failures  
 
-**If conditions are valid:**
-- it commits  
-- a receipt is produced  
-- the result can be verified and replayed  
+This is not:
+- a monitoring dashboard  
+- a logging tool  
+- a full enterprise deployment  
 
-**If conditions are not valid:**
-- it does not become real  
-- it is rolled back or blocked  
-- the failure is explicit and provable  
+---
+
+## Running the demo
+
+python example_instrumentation.py
+
+---
+
+## Production context
+
+In production, SafeChange operates as a commit-boundary enforcement layer integrated with system authority and policy controls, generating deterministic decision records and enabling replay under identical conditions.
 
 ---
 
 ## Positioning
 
-Veritas SafeChange is a licensed execution layer, not a general-use library.
+SafeChange is not visibility.  
+It is control at the point where decisions become real.
 
-### Allowed
-- confidential evaluation  
-- bounded demonstrations  
-- proof-of-concept use  
+---
 
-### Not allowed
-- production deployment without agreement  
-- derivative implementations  
+## Summary
+
+If a system shouldn’t act, SafeChange ensures it can’t.
+
+---
+
+## Contact
+
+Samantha Revita & Terry Snyder  
+Veritas Aegis- derivative implementations  
 - reverse engineering  
 - redistribution  
 
