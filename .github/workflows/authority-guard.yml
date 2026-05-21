@@ -1,0 +1,34 @@
+name: Authority Guard
+
+on:
+  push:
+  pull_request:
+  delete:
+  create:
+  workflow_dispatch:
+
+jobs:
+  authority-guard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check actor authority
+        run: |
+          ACTOR="${{ github.actor }}"
+
+          if [ "$ACTOR" = "Kamanaka5502" ] || [ "$ACTOR" = "DeagleTWC" ]; then
+            echo "AUTHORIZED ACTOR: $ACTOR"
+            echo "Repository: ${{ github.repository }}"
+            echo "Event: ${{ github.event_name }}"
+            echo "Ref: ${{ github.ref }}"
+            echo "SHA: ${{ github.sha }}"
+            exit 0
+          fi
+
+          echo "CRITICAL: UNAUTHORIZED REPO MOVEMENT"
+          echo "Actor: $ACTOR"
+          echo "Repository: ${{ github.repository }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
+          exit 1
