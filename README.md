@@ -1,6 +1,28 @@
 # Veritas SafeChange™
 
-### Execution control at the moment decisions become real
+### Commit-boundary consequence control at the moment decisions would become real
+
+---
+
+## Public clearance
+
+```text
+PUBLIC CLEARANCE GRANTED
+```
+
+`veritas-safechange` may remain public as a buyer-readable commit-boundary proof corridor and positioning surface.
+
+SafeChange is not a separate runtime authority.
+
+SafeChange is not an added control layer.
+
+SafeChange is not the original kernel.
+
+SafeChange is a public corridor proof showing the same Elyria / VERITA authority pattern:
+
+```text
+If standing does not hold, the action cannot bind.
+```
 
 ---
 
@@ -18,9 +40,9 @@ They happen when state has changed since a decision was made, permissions are no
 
 ## The solution
 
-Veritas SafeChange™ is an execution-control layer that resolves whether an action is allowed to complete under live state at the moment it binds.
+Veritas SafeChange™ is a public proof surface for commit-boundary consequence control: whether an attempted action may complete under live state at the moment it would bind.
 
-At the commit point, every action must prove:
+At the commit point, every attempted action must prove:
 
 - authority is valid
 - constraints are satisfied
@@ -28,9 +50,9 @@ At the commit point, every action must prove:
 - risk remains acceptable
 - replay evidence can be produced
 
-If standing does not hold:
+If standing does not hold, the attempted action is:
 
-- the action is blocked
+- blocked
 - narrowed
 - escalated
 - or refused, depending on corridor law
@@ -52,7 +74,7 @@ It may expose:
 - integration posture
 - protected-scope boundaries
 
-It does **not** expose the protected production enforcement substrate, private law bundles, customer-specific policy compilers, protected admission internals, or deployment-sensitive control paths.
+It does **not** expose the protected production substrate, private law bundles, customer-specific policy compilers, protected admission internals, or deployment-sensitive execution paths.
 
 If a runnable demo file is present in this repository, run the commands documented beside that file.
 
@@ -63,7 +85,7 @@ If no runnable demo is present, review this repository as a protected public pro
 ## How it works
 
 ```text
-request → attempt → evaluate → execute | block | escalate | refuse
+request → attempt → evaluate → execute | block | narrow | escalate | refuse
 ```
 
 Each public decision record may include:
@@ -75,7 +97,7 @@ Each public decision record may include:
 - admissibility basis
 - replay basis
 
-Production deployments add protected enforcement, policy gating, runtime integration, and customer-specific custody controls.
+Production use expresses the protected runtime authority at the commit boundary, integrated with system authority, evidence custody, deterministic receipts, and replay under identical conditions.
 
 ---
 
@@ -83,13 +105,13 @@ Production deployments add protected enforcement, policy gating, runtime integra
 
 Traditional governance observes and explains decisions after execution.
 
-SafeChange controls whether execution may complete before impact occurs.
+SafeChange proves whether an attempted action may complete before impact occurs.
 
 It shifts:
 
 - risk from reactive → preventative
 - audit from explanation → proof
-- control from observation → enforcement
+- public review from dashboard language → commit-boundary consequence control
 
 ---
 
@@ -97,15 +119,17 @@ It shifts:
 
 This is:
 
-- an execution-control proof surface
-- a demonstration of commit-boundary reasoning
-- a public-safe expression of protected enforcement architecture
+- a commit-boundary proof corridor
+- a demonstration of consequence-control reasoning
+- a public-safe expression of protected runtime authority
 - a way to surface hidden execution failures before they bind
 
 This is not:
 
 - a monitoring dashboard
 - a logging tool
+- a generic policy gate
+- a standalone runtime authority
 - an open-source runtime
 - a full enterprise deployment
 - permission to reproduce protected machinery
@@ -114,7 +138,7 @@ This is not:
 
 ## Production context
 
-In production, SafeChange operates as a commit-boundary enforcement layer integrated with system authority, policy controls, evidence custody, deterministic receipts, and replay under identical conditions.
+In production, SafeChange expresses the protected runtime authority at the commit boundary, integrated with system authority, evidence custody, deterministic receipts, and replay under identical conditions.
 
 ---
 
@@ -122,7 +146,11 @@ In production, SafeChange operates as a commit-boundary enforcement layer integr
 
 SafeChange is not visibility.
 
-It is control at the point where decisions become real.
+SafeChange is not policy gating.
+
+SafeChange is not an old-stack gate.
+
+SafeChange is a buyer-readable commit-boundary proof corridor for whether an attempted action may bind under live state.
 
 ---
 
@@ -158,7 +186,3 @@ Veritas Aegis
 
 Samantha Revita
 SamanthaGreenwellRevita@gmail.com
-
-Terry Snyder
-Co-Architect, Execution Substrate
-canarybird0618@gmail.com
